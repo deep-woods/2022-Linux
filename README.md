@@ -12,6 +12,30 @@
 - `type`: `type python3`
   - `python3 is hashed (/usr/bin/python3)`: Python is running because it is `in path`.
 - `echo $PATH`: the `paths` your machine is looking for commands.
+- `-xvf`: short method to implement –extract –verbose –file. So, x stands for extracting the archive, v for displaying Verbose information, and f for specifying a filename.
+
+        tar -xvf openjdk-17.0.2_linux-aarch64_bin.tar.gz
+
+
+- `cd /path/; tree`
+
+        cd /opt/app/WeatherApp/; tree
+
+        .
+        ├── pom.xml
+        └── src
+            ├── main
+            │   └── java
+            │       └── org
+            │           └── ForestFoundation
+            │               └── app
+            │                   └── WeatherApp.java
+            └── test
+                └── java
+                    └── org
+                        └── ForestFoundation
+                            └── app
+                                └── WeatherAppTest.java
 
 
 
