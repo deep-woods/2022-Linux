@@ -1,6 +1,6 @@
-# [REPOSITORY]
+# DevOps Prerequisites in Linux System
 
-[REPOSITORY] learn forest
+DevOps Prerequisites learn forest
 
 <br>
 
@@ -23,6 +23,10 @@ Cool stuff to learn: Linux, Docker, Kubernetes, AWS!
   - Switching
   - Routing and Gateway
 
+[[DNS]](#DNS)  
+[[]](#)  
+[[]](#)  
+[[]](#)  
 [[]](#)  
 [[References]](#ref)   
 
@@ -372,23 +376,17 @@ Type 2: Oracle VirtualBox, VMWare Workstation
 <br>
 
 ## <span id="networking">Networking</span>
+<br> 
 
-[[☝️top]](#top)
+**Jump Host**
 
-- Switching
-- Routing
-- Default Gateway
-- DNS Configuration on Linux
-
-There are two systems (hardware devices). How do they actually connect with and talk to each other? We need an `interface` for that. 
-
-<br>
+A jump server, jump host or jump box is a system on a network used to access and manage devices in a separate security zone. A jump server is a hardened and monitored device that spans two dissimilar security zones and provides a controlled means of access between them. The most common example is managing a host in a DMZ from trusted networks or computers.
 
 
 ### `Switching`: Inter-system networking setup
 
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2001.png" width=600 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2009.png" width=600 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2001.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2009.png" width=1000 />
 
 
 | system 1   |  system 2  |
@@ -401,10 +399,10 @@ There are two systems (hardware devices). How do they actually connect with and 
 
 ### `Routing` and `Gateway`: Inter-network networking setup
 
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2002.png" width=600 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2003.png" width=600 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2004.png" width=600 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2005.png" width=600 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2002.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2003.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2004.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2005.png" width=1000 />
 
 - Each network gets assigned an IP. 
 - How does the system 1 know where the router is to send the packets through to communicate with the system 3?
@@ -458,18 +456,41 @@ If you want to assign an IP address to a system, a system must have a physical o
       172.16.238.0    0.0.0.0         255.255.255.0   U     0      0        0 eth0
       172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 eth1
 
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2006.png" width=600 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2007.png" width=600 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2006.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2007.png" width=1000 />
 
 <br>
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2010.png" width=600 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2010.png" width=1000 />
 
-## <span id=""></span>
+
+## <span id="DNS">DNS</span>
 
 [[☝️top]](#top)
 
-<br>
+- `DNS`: resolves IP of a domain name. 
+- `ping`: a computer network administration software utility used to test the reachability of a host on an Internet Protocol (IP) network.
+- `/etc/hosts`: points domains/hostnames to IPs locally.
+- `/etc/resolv.conf`: contains information about dns server (nameserver).
 
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20011.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20012.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20013.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20014.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20015.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20016.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20017.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20018.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20019.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2020.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2021.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2022.png" width=1000 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2023.png" width=1000 />
+
+To edit `/etc/hosts`, you can do, for example: 
+
+      
+
+<br>
 
 
 ## <span id=""></span>
