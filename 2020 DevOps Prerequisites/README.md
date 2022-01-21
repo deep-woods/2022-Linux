@@ -19,6 +19,10 @@ Cool stuff to learn: Linux, Docker, Kubernetes, AWS!
 [[Services]](#services)  
 [[VirtualBox]](#virtualbox)  
 [[Networking]](#networking)  
+
+  - Switching
+  - Routing and Gateway
+
 [[]](#)  
 [[References]](#ref)   
 
@@ -380,7 +384,12 @@ There are two systems (hardware devices). How do they actually connect with and 
 
 <br>
 
-`Switching`: Inter-system networking setup
+
+### `Switching`: Inter-system networking setup
+
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2001.png" width=600 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2009.png" width=600 />
+
 
 | system 1   |  system 2  |
 | -- | -- |
@@ -390,7 +399,12 @@ There are two systems (hardware devices). How do they actually connect with and 
 
 <br>
 
-`Routing`: Inter-network networking setup
+### `Routing` and `Gateway`: Inter-network networking setup
+
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2002.png" width=600 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2003.png" width=600 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2004.png" width=600 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2005.png" width=600 />
 
 - Each network gets assigned an IP. 
 - How does the system 1 know where the router is to send the packets through to communicate with the system 3?
@@ -405,14 +419,50 @@ There are two systems (hardware devices). How do they actually connect with and 
 | `ip addr add 192.168.1.10/24 dev eth0`   |  `ip addr add 192.168.1.11/24 dev eth0`  |
 | `ping 192.168.1.11`   |    |
 
+- A gateway can connect a system to the internet.
+
+<br>
+
+### Commands
+
       ip route add 192.168.2.0/24 via 192.168.1.1
       
       route
       Destination       Gateway           Genmask           Iface
       192.168.2.0       192.168.1.1       255.255.255.0     eth0
 
+If you want to assign an IP address to a system, a system must have a physical or virtual network interface attached to it. There are other interfaces such as `eth`, `veth`, and `lo`.
+
+      ip link 
+
+      1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+      19: eth0@if20: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+         link/ether 02:42:ac:10:ee:0a brd ff:ff:ff:ff:ff:ff link-netnsid 0
+      23: eth1@if24: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+         link/ether 02:42:ac:11:00:05 brd ff:ff:ff:ff:ff:ff link-netnsid 0
 
 <br>
+
+- `ip route`
+
+      default via 172.16.238.1 dev eth0 
+      172.16.238.0/24 dev eth0 proto kernel scope link src 172.16.238.10 
+      172.17.0.0/16 dev eth1 proto kernel scope link src 172.17.0.5 
+
+- `route`: displays IP route table.
+
+      Kernel IP routing table
+      Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+      default         gateway         0.0.0.0         UG    0      0        0 eth0
+      172.16.238.0    0.0.0.0         255.255.255.0   U     0      0        0 eth0
+      172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 eth1
+
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2006.png" width=600 />
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2007.png" width=600 />
+
+<br>
+<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2010.png" width=600 />
 
 ## <span id=""></span>
 
