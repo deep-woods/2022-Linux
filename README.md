@@ -1,9 +1,21 @@
 # 2022 Linux
  Linux learn space
 
-`atp`: Advanced Packaging Tool (APT). Performs functions like installing new software packages, upgrading existing software packages, updating of the package list index, and even upgrading the entire Ubuntu system.
-
 <br>
+
+[[Linux Commands]]
+
+- `apt`: Advanced Packaging Tool. a powerful command-line tool, which works with Ubuntu's Advanced Packaging Tool (APT) performing such functions as installation of new software packages, upgrade of existing software packages, updating of the package list index, and even upgrading the entire Ubuntu system.
+- `touch`: creates a file without any content
+- `freeze`: `pip3 freeze` lists all python libraries installed on your machine. 
+- `which`: 
+- `type`: `type python3`
+  - `python3 is hashed (/usr/bin/python3)`: Python is running because it is `in path`.
+- `echo $PATH`: the `paths` your machine is looking for commands.
+
+
+
+[[Install]]
 
 ## <span id="setup">Setup</span>
 
@@ -46,6 +58,11 @@ https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 `sudo dpkg -i GitHubDesktop-linux-2.9.3-linux3.deb` << Re-install after the fix.    
 
 https://meshworld.in/install-github-desktop-on-ubuntu-20-04-or-ubuntu-based-distributions/  
+
+<br>
+
+**Install `pip`**
+sudo apt install python3-pip
 
 <br>
 
