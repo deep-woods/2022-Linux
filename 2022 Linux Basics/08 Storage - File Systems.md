@@ -3,31 +3,7 @@
 A newly partitioned disk is just a raw disk and is not usable for the OS. So we have to create a file system to make actual use of the partition. A file system defines how data is stored on a disk.
 
 <br>
-
-Order
-
-1. Partitoin disk
-2. Create a file system in the partition. 
-3. Mount the filesystem to start storing data. 
-
-<br>
-<br>
-
-## Types of filesystems
-
-<br>
-
-The extended file system series EXT2, EXT3, and EXT4 are commonly used filesystems.
-
-- `EXT3`: implements various features that allowed quicker startup after a shutdown. 
-- `EXT4`: supports 16 TB of maximum file size and up to 1 Exabyte of volume size.
-
-| EXT2  | EXT3   |  EXT4  |
-| -- | -- | -- |
-| 4TB volume   | 4TB   |  1 EB  |
-| Supports compression   |  Uses journal  |  Uses journal  |
-| Supports Linux permissions   |   |  Uses chksum for journal   |
-| Long crash recovery   |   backward compatible  |  backward compatible |
+ rd compatible |
 
 <br>
 
