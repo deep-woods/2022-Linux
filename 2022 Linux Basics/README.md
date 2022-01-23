@@ -19,7 +19,7 @@ Core Concepts
 [[🐳Docker]](#docker)  
 [[Github]](#github)  
 [[`pip`]](#pip)  
-[[VS Code]](#vscode)  
+[[VS Code]](#vscode)    
 [[Mouse]](#mouse)  
 [[]](#)  
 [[]](#)  
@@ -610,20 +610,74 @@ Enable the interface by running:
 
 ## <span id="security">Security and File Permissions</span>
 
+- Creating Users and Groups
+- Managing file permission and ownership
+- Special directories and files
 
-
-
-
-
-
-
-
+- Access control
+- PAM (Pluggable Authentication Model)
+- Network Security: restrict or allow access to services listening on the Linux server. External firewalls also do the job, but we can also set it up ourselves by making use of tools such as IPTables and Firewalld.
+- SSH hardening: for remote access to a server over an unsecured network. SSH hardening makes sure that only authorised users gain access to the server.
+- SELinux: uses security policies for isolating applications running
+on the same system from each other to protect the Linux server.
 
 <br>
+
+### User Management
+
+- `useradd username` 
+- UID: `1004`
+- GID: `1006`
+
+      sudo useradd forest
+
+      sudo grep -i forest /etc/passwd
+      forest:x:1004:1006::/home/forest:/bin/sh
+
+- `passwd forest`
+
+      sudo passwd forest
+      Enter new UNIX password: 
+      Retype new UNIX password: 
+      passwd: password updated successfully
+
+- `useradd -u 1000 -g 1000 -d /home/user -s /bin/bash -c "Custom Comments" user`
+
+      useradd -u 1004 -g 2004 -d /home/forest -s /bin/bash -c "Forest Ranger" forest
+
+      grep -i forrest /etc/passwd
+      forrest:x:1007:1002:Forest Ranger!:/home/forrest:/bin/bash
+
 <br>
+
+- `userdel forest`
+
 <br>
+
+- `groupadd -g 1001 developer`
+- `groupdel developer`
+
 <br>
+
+**Access control files**
+
+    /etc/passwd
+    USERNAME:PASSWORD:UID:GID:GECOS:HOMEDIR:SHELL
+
+    sudo grep -i forest /etc/passwd
+    forest:x:1000:1000:Coding Forest,,,:/home/forest:/bin/bash
+
 <br>
+ 
+    /etc/shadow
+    USERNAME:PASSWORD:LASTCHANGE:MINAGE:MAXAGE:WARN:INACTIVE:EXPDATE
+
+- `LASTCHANGE`: the date since the password was last changed. This timestamp in epoch the number of days that have elapsed since midnight January 1st, 1970.
+- `MINAGE`, `MAXAGE`: time duration for obligatory password change 
+- `WARN`: warn user for password change
+- `INACTIVE`: temporary period user is allowed to access account past the password change expiration date. Beyond the inactive period defined in this field, the user account will be locked. 
+
+
 <br>
 <br>
 <br>
