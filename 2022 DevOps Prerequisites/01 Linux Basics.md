@@ -1,48 +1,13 @@
-# DevOps Prerequisites in Linux System
-
-DevOps Prerequisites learn forest
+# <span id="basics">Basics</span>
 
 <br>
 
-### Notes
+## Notes
 
 Cool stuff to learn: Linux, Docker, Kubernetes, AWS! 
 All lecture slides from KodeKloud's Mumshad with freeCodeCamp. See reference below.
 
 <br>
-
-### <span id="top">Content</span>
-
-[[Setup]](#setup)   
-[[Basics]](#basics)   
-[[Commands]](#command)s  
-[[Pakcage Managers]](#package)  
-[[Services]](#services)  
-[[VirtualBox]](#virtualbox)  
-[[Networking]](#networking)  
-
-  - Switching
-  - Routing and Gateway
-
-[[DNS]](#DNS)  
-[[Applications]](#Applications)  
-[[]](#)  
-[[]](#)  
-[[]](#)  
-[[References]](#ref)   
-
-
-<br>
-
-### <span id='setup'>Setup</span>
-
-[[☝️top]](#top)
-
-<br>
-
-## <span id="basics">Basics</span>
-
-[[☝️top]](#top)
 
 Things covered:
 
@@ -56,11 +21,10 @@ CentOS is a free Red hat-developed community version of Linux.
 <br>
 
 
-## <span id="commands">Commands</span>
-
+# <span id="commands">Commands</span>
 [[☝️top]](#top)
 
-### Basic operations
+## Basic operations
 
 - `echo $SHELL`: check your shell version.
   - `/bin/bash`
@@ -77,7 +41,7 @@ CentOS is a free Red hat-developed community version of Linux.
 
 <br>
 
-### Files
+## Files
 
 - `touch new_file.txt`: creates a new file (no content)
 - `cat > new_file.txt`: concatenates content to file
@@ -91,7 +55,7 @@ CentOS is a free Red hat-developed community version of Linux.
 
 <br>
 
-### User accounts
+## User accounts
 
 - `whoami`: Check the current account name
 - `id`
@@ -103,14 +67,14 @@ CentOS is a free Red hat-developed community version of Linux.
 
 <br>
 
-### Download files
+## Download files
 
 - `curl https://url -O`: the Capital `-O` at the end saves the url content to a file in the current location.
 - `wget https://url -O file.txt`
 
 <br>
 
-### Check OS versionls 
+## Check OS versionls 
 
 - `ls /etc/*release*`: check your OS version.
 
@@ -131,11 +95,11 @@ CentOS is a free Red hat-developed community version of Linux.
 
 <br>
 
-## <span id="package">Package Managers</span>
+# <span id="package">Package Managers</span>
 
 [[☝️top]](#top)
 
-### RPM (Red Hat Package Manager)
+## RPM (Red Hat Package Manager)
 
 - `rpm -i telnet.rpm`: install package
 - `rpm -e telnet.rpm`: uninstall package
@@ -147,7 +111,7 @@ CentOS is a free Red hat-developed community version of Linux.
 - `sudo rpm -i /opt/ftp-0.17-67.el7.x86_64.rpm`
 - `sudo rpm -e /opt/ftp-0.17-67.el7.x86_64`
 
-### YUM
+## YUM
 
 a high-level package manager that uses RPM underneath.
 
@@ -187,7 +151,7 @@ The Yellowdog Updater, Modified is a free and open-source command-line package-m
 
 <br>
 
-### Questions
+## Questions
 
 Q. Which version of ansible is installed with yum _**on host01 server**_ in previous step?
 
@@ -205,12 +169,12 @@ Q. Install `ansible` version 2.8.11.
 
 <br>
 
-## <span id="services">Services</span>
+# <span id="services">Services</span>
 
 [[☝️top]](#top)
 
 
-### `Httpd`
+## `Httpd`
 
 HTTPd is a software program that usually runs in the background, as a process, and plays the role of a server in a client-server model using the HTTP and/or HTTPS network protocol(s).
 
@@ -222,13 +186,13 @@ It usually is the main software part of an HTTP server better known as a web ser
 
 <br>
 
-### Daemon 
+## Daemon 
 
 In multitasking computer operating systems, a daemon is a computer program that runs as a background process, rather than being under the direct control of an interactive user. 
 
 <br>
 
-### Service Commands
+## Service Commands
 
 `systemctl` command is the key management tool for init system control.
 
@@ -276,7 +240,7 @@ In multitasking computer operating systems, a daemon is a computer program that 
       Active: inactive (dead)
 
 
-### Questions
+## Questions
 
 Q. You decide to use dedicated python flask app instead of apache and want to stop the `httpd` service. What do you do?
 
@@ -346,195 +310,7 @@ Q. Once everything is configured, set the app to auto-start on reboot.
       Created symlink from /etc/systemd/system/multi-user.target.wants/app.service to /usr/lib/systemd/system/app.service.
 
 
-<br>
 
-## <span id="virtualbox">VirtualBox</span>
-
-[[☝️top]](#top)
-
-- Deploying VMs
-- Multiple VMs
-- Networking and troubleshooting network
-- Snapshots and restore VMs
-
-<br>
-
-### Virtualisation S/W
-
-Type 1: VMware, Microsoft Hyper-v
-Type 2: Oracle VirtualBox, VMWare Workstation
-  - Host is the operating system. 
-
-<br>
-
-### Setup
-
-1. Install `VirtualBox` at https://www.virtualbox.org/wiki/Downloads.
-
-- The VM itself and its disks are installed on the host OS.
-- Creating a virtual machine is like buying a new computer wihtout an OS installed in it. 
-
-<br>
-
-## <span id="networking">Networking</span>
-<br> 
-
-**Jump Host**
-
-A jump server, jump host or jump box is a system on a network used to access and manage devices in a separate security zone. A jump server is a hardened and monitored device that spans two dissimilar security zones and provides a controlled means of access between them. The most common example is managing a host in a DMZ from trusted networks or computers.
-
-
-### `Switching`: Inter-system networking setup
-
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2001.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2009.png" width=1000 />
-
-
-| system 1   |  system 2  |
-| -- | -- |
-| `ip link`   | `ip link`   |
-| `ip addr add 192.168.1.10/24 dev eth0`   |  `ip addr add 192.168.1.11/24 dev eth0`  |
-| `ping 192.168.1.11`   |    |
-
-<br>
-
-### `Routing` and `Gateway`: Inter-network networking setup
-
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2002.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2003.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2004.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2005.png" width=1000 />
-
-- Each network gets assigned an IP. 
-- How does the system 1 know where the router is to send the packets through to communicate with the system 3?
-- The router is just another device in the network. 
-- And we **configure** the system's `gateway` or `route`.
-- If a network is a room, a gateway is a door to the outside world (internet). 
-  - The systems need to know where they need to go to go through it. 
-
-| system 1 in network A  |  system 3 in network B |
-| -- | -- |
-| `ip link`   | `ip link`   |
-| `ip addr add 192.168.1.10/24 dev eth0`   |  `ip addr add 192.168.1.11/24 dev eth0`  |
-| `ping 192.168.1.11`   |    |
-
-- A gateway can connect a system to the internet.
-
-<br>
-
-### Commands
-
-      ip route add 192.168.2.0/24 via 192.168.1.1
-      
-      route
-      Destination       Gateway           Genmask           Iface
-      192.168.2.0       192.168.1.1       255.255.255.0     eth0
-
-If you want to assign an IP address to a system, a system must have a physical or virtual network interface attached to it. There are other interfaces such as `eth`, `veth`, and `lo`.
-
-      ip link 
-
-      1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
-         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-      19: eth0@if20: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
-         link/ether 02:42:ac:10:ee:0a brd ff:ff:ff:ff:ff:ff link-netnsid 0
-      23: eth1@if24: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
-         link/ether 02:42:ac:11:00:05 brd ff:ff:ff:ff:ff:ff link-netnsid 0
-
-<br>
-
-- `ip route`
-
-      default via 172.16.238.1 dev eth0 
-      172.16.238.0/24 dev eth0 proto kernel scope link src 172.16.238.10 
-      172.17.0.0/16 dev eth1 proto kernel scope link src 172.17.0.5 
-
-- `route`: displays IP route table.
-
-      Kernel IP routing table
-      Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
-      default         gateway         0.0.0.0         UG    0      0        0 eth0
-      172.16.238.0    0.0.0.0         255.255.255.0   U     0      0        0 eth0
-      172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 eth1
-
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2006.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2007.png" width=1000 />
-
-<br>
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2010.png" width=1000 />
-
-
-## <span id="DNS">DNS</span>
-
-[[☝️top]](#top)
-
-- `DNS`: resolves IP of a domain name. 
-- `ping`: a computer network administration software utility used to test the reachability of a host on an Internet Protocol (IP) network.
-- `/etc/hosts`: points domains/hostnames to IPs locally.
-- `/etc/resolv.conf`: contains information about dns server (nameserver).
-
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20011.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20012.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20013.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20014.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20015.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20016.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20017.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20018.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%20019.png" width=1000 />
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2020.png" width=1000 />
-
-
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2023.png" width=1000 />
-
-To edit `/etc/hosts`, you can do, for example: 
-
-      sudo vi /etc/hosts
-
-      127.0.0.1       localhost
-      ::1     localhost ip6-localhost ip6-loopback
-      fe00::0 ip6-localnet
-      ff00::0 ip6-mcastprefix
-      ff02::1 ip6-allnodes
-      ff02::2 ip6-allrouters
-      172.16.xxx.x    imaginary_website.com host01
-      172.17.x.x      imaginary_website.com host01
-      127.0.0.1       www.google.com host01
-
-### Search Domain 
-
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2022.png" width=1000 />
-
-If you want to omit the default domain name when searching on address bar, 
-you can have the `/etc/resolv.conf` append the default domain name by adding the following line - `search [default_domian_name]`:
-
-      [/etc/resolv.conf]
-
-      search stratos.xfusioncorp.com
-      nameserver 127.0.0.11
-      nameserver 8.8.8.8
-      search google.com
-      options ndots:0
-
-Now if you search `drive`, for instance, the browser will direct you to `drive.google.com`.
-
-### NSLoopup
-
-<img src="https://github.com/Coding-Forest/2022-Linux/blob/main/images/Linux%2021.png" width=1000 />
-
-- `dig`: is a network administration command-line tool for querying the Domain Name System (DNS). dig is useful for network troubleshooting and for educational purposes. 
-
-<br>
-
-
-
-
-
-## <span id=""></span>
-
-[[☝️top]](#top)
-
-<br>
 
 ### <span id="ref">References</span>
 
