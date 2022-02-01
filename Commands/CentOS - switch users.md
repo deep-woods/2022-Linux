@@ -1,0 +1,22 @@
+## Context
+    
+    You need to be root to perform this command. 
+
+    We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility. 
+
+<br>
+
+## Command
+
+    su - root
+    password: 
+
+<br>
+
+### References
+
+- https://wiki.centos.org/TipsAndTricks/BecomingRoot
