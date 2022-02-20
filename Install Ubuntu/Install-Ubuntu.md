@@ -18,7 +18,7 @@
         ProduKey.exe    <----------- RUN THIS.
         readme.txt
 
-2. Install `Ubuntu`.
+2. Download `Ubuntu` image.
 
 - https://ubuntu.com/download/desktop/thank-you?version=20.04.3&architecture=amd64
 - Download `Ubuntu 20.04 LTS`
