@@ -8,9 +8,11 @@
 [[🐁Go]](#Go)    
 [[🐳Docker]](#Docker)  
 [[🕹️VMware Workstation Player]](#VMware)  
-[[⌨️Korean input]](#Korean)  
+[[🖥️Dual Monitor Settings]](#dual)  
+[[⌨️Korean Input Keyboard]](#Korean)  
 [[Remote Control - Anydesk]](#anydesk)  
-[[]](#)  
+[[Utilities]](#Utilities)  
+- [Pinta](#Pinta)  
 [[]](#)  
 [[]](#)  
 
@@ -260,6 +262,17 @@ Install the bundle.
         Configuring...
     [####################################################################  ]  96%
 
+<br>
+
+## <span id="dual">🖥️Dual Monitor Settings</span>
+
+[[Top👆]](#top)
+
+dual monitor settings.
+
+    sudo apt install -y compizconfig-settings-manager
+
+CompizConfig Settings Manager > Window Management > Place Windows
 
 <br>
 
@@ -312,15 +325,15 @@ Step 3. Install.
 
 <br>
 
-## <span id=""> </span>
+## <span id="Utilities">Utilities</span>
 
 [[Top👆]](#top)
 
-<br>
+### <span id="Pinta">Pinta</span>
 
-## <span id=""> </span>
+      $ sudo apt-get update
+      $ sudo apt-get install pinta
 
-[[Top👆]](#top)
 
 <br>
 
