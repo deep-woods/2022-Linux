@@ -18,7 +18,7 @@
         ProduKey.exe    <----------- RUN THIS.
         readme.txt
 
-2. Install `Ubuntu`.
+2. Download `Ubuntu` image.
 
 - https://ubuntu.com/download/desktop/thank-you?version=20.04.3&architecture=amd64
 - Download `Ubuntu 20.04 LTS`
@@ -36,6 +36,9 @@ Rufus supporta una varietà di file .iso avviabili, incluse molte distribuzioni 
 Rufus può anche essere usato per calcolare gli hash MD5, SHA-1 e SHA-256 dell'immagine attualmente selezionata.
 
 4. Burn `Ubuntu ISO` onto `Rufus`
+
+<img src="https://github.com/deep-woods/2022-Linux/blob/main/Images/Burn_Ubuntu_ISO_on_USB.png" />
+
 
 5. Disable Auto-repoot options
 
@@ -58,3 +61,6 @@ Rufus può anche essere usato per calcolare gli hash MD5, SHA-1 e SHA-256 dell'i
 [[Top]](#top)
 
 - Varsha Meghana (2020) Replacing pre-installed Windows with Ubuntu OS https://www.youtube.com/watch?v=BarxVQB9RN0&t=22s
+- Jeongju Lee https://webnautes.tistory.com/1146
+- Jeongju Lee https://webnautes.tistory.com/1198
+- Un光 https://kwang9.tistory.com/119
