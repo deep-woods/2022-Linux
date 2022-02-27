@@ -7,6 +7,7 @@
 [[☕Java]](#Java)   
 [[🐁Go]](#Go)    
 [[🐳Docker]](#Docker)  
+[[☸️Kubernetes]](#k8s)  
 [[🕹️VMware Workstation Player]](#VMware)  
 [[🖥️Dual Monitor Settings]](#dual)  
 [[⌨️Korean Input Keyboard]](#Korean)  
@@ -230,6 +231,40 @@ Clean your bench.
 
 <br>
 
+## <span id="k8s">☸️Kubernetes</span>
+
+[[Top👆]](#top)
+
+1. Download the latest release with the command:
+
+     $ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+          % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                         Dload  Upload   Total   Spent    Left  Speed
+        100   154  100   154    0     0    905      0 --:--:-- --:--:-- --:--:--   905
+        100 44.4M  100 44.4M    0     0  10.0M      0  0:00:04  0:00:04 --:--:-- 11.0M
+
+2. Validate the binary (optional):
+
+Download the kubectl checksum file:
+
+     $ curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+          % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                         Dload  Upload   Total   Spent    Left  Speed
+        100   154  100   154    0     0    900      0 --:--:-- --:--:-- --:--:--   900
+        100    64  100    64    0     0    158      0 --:--:-- --:--:-- --:--:--   158
+
+     $ echo "$(<kubectl.sha256)  kubectl" | sha256sum --check
+         kubectl: OK
+
+3. Install K8s.
+
+        $ kubectl version --client
+            Client Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.23.4", GitCommit:"", 
+            GitTreeState:"clean", BuildDate:"2022-02", GoVersion:"go1.17.7", Compiler:"gc", Platform:"linux/amd64"}
+
+<br>
+
 ## <span id="VMware">🕹️VMware Workstation Player</span>
 
 [[Top👆]](#top)
@@ -343,12 +378,6 @@ Step 3. Install.
 
 <br>
 
-## <span id=""> </span>
-
-[[Top👆]](#top)
-
-<br>
-
 ## Troubleshoot
 
 Error while powering on: This host supports Intel VT-x, but Intel VT-x is disabled.
@@ -365,6 +394,7 @@ Error while powering on: This host supports Intel VT-x, but Intel VT-x is disabl
 - PhoenixNAP (2019) How to Install Python 3 on Ubuntu 18.04 or 20.04 https://phoenixnap.com/kb/how-to-install-python-3-ubuntu
 - golangdocs (n.d.) How to Install Go on Linux https://golangdocs.com/install-go-linux
 - docker docs (n.d.) Install Docker Engine on Ubuntu https://docs.docker.com/engine/install/ubuntu/
+- kubernetes (n.d.) https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 - Install VMware Workstation https://linuxconfig.org/how-to-install-vmware-workstation-on-ubuntu-20-04-focal-fossa-linux
 - Install Anydesk https://computingforgeeks.com/how-to-install-anydesk-on-ubuntu/
 - Set Korean input keyboard in Ubuntu https://shanepark.tistory.com/231
